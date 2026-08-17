@@ -6,7 +6,7 @@ before_install:
   - docker build -t emanewere/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true emma/react-test npm test
+  - docker run -e CI=true emanewere/react-test npm test
 
 after_success:
   - docker build -t emanewere/multi-client-2 ./client
